@@ -6,7 +6,7 @@ import * as fs from 'fs';
 function findClassNameAndAddImports(
 	nameOfClass: string,
 	sourceFiles: SourceFile[],
-	sourceFile: SourceFile
+	currentFile: SourceFile
 ) {
 	sourceFiles.forEach((sourceFile) => {
 		const matchingEntity =
@@ -18,10 +18,10 @@ function findClassNameAndAddImports(
 			const relativePath =
 				'./' +
 				path
-					.relative(path.dirname(sourceFile.getFilePath()), foundFilePath)
+					.relative(path.dirname(currentFile.getFilePath()), foundFilePath)
 					.replace('.ts', '');
 			// Add import for the found class
-			sourceFile.addImportDeclaration({
+			currentFile.addImportDeclaration({
 				moduleSpecifier: relativePath, //sourceFile.getFilePath(),
 				namedImports: [ nameOfClass ]
 			});
