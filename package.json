@@ -15,6 +15,10 @@
     "Driven",
     "Design"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josharsh/do-ddd.git"
+  },
   "author": "josharsh",
   "license": "ISC",
   "dependencies": {

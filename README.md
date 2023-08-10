@@ -48,7 +48,7 @@ This will create:
 To contribute or modify the project, you can clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-username/do-ddd.git
+git clone https://github.com/josharsh/do-ddd.git
 cd do-ddd
 npm install
 ```
