@@ -1,0 +1,30 @@
+{
+  "name": "do-ddd",
+  "version": "1.0.7",
+  "description": "Automates some of the Domain Driven Design pieces for faster development",
+  "main": "main.ts",
+  "scripts": {
+    "build": "tsc",
+    "link": "npm link"
+  },
+  "bin": {
+    "doddd": "./dist/main.js"
+  },
+  "keywords": [
+    "Domain",
+    "Driven",
+    "Design"
+  ],
+  "author": "josharsh",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "fs-extra": "^11.1.1",
+    "ts-morph": "^19.0.0",
+    "typescript": "^5.1.6",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.24"
+  }
+}
