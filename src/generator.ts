@@ -2,6 +2,7 @@
 import { Project, Scope, SourceFile, TypeNode, WriterFunctionOrValue, Writers } from 'ts-morph';
 import * as path from 'path';
 import * as fs from 'fs';
+import { findTsConfigPath } from './utils/findTsConfig';
 
 function findClassNameAndAddImports(
 	nameOfClass: string,
@@ -27,18 +28,6 @@ function findClassNameAndAddImports(
 			});
 		}
 	});
-}
-
-function findTsConfigPath(startPath: string): string | null {
-	let currentPath = startPath;
-	while (currentPath !== path.parse(currentPath).root) {
-		const tsConfigPath = path.resolve(currentPath, 'tsconfig.json');
-		if (fs.existsSync(tsConfigPath)) {
-			return tsConfigPath;
-		}
-		currentPath = path.resolve(currentPath, '..');
-	}
-	return null;
 }
 
 export function generateFiles(identifier: string, repos: string[]) {

@@ -1,15 +1,20 @@
 {
   "name": "do-ddd",
-  "version": "1.0.11",
+  "version": "1.0.14",
   "description": "Automates some of the Domain Driven Design pieces for faster development",
-  "main": "main.ts",
+  "main": "dist/main.js",
   "scripts": {
+    "prebuild": "copyfiles -u 1 src/local-dev-app/**/* dist/local-dev-app",
     "build": "tsc",
-    "link": "npm link"
+    "link": "npm link",
+    "web-app": "next dev -p 3000"
   },
   "bin": {
     "doddd": "./dist/main.js"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "Domain",
     "Driven",
@@ -24,11 +29,15 @@
   "dependencies": {
     "commander": "^11.0.0",
     "fs-extra": "^11.1.1",
+    "next": "^11.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "ts-morph": "^19.0.0",
     "typescript": "^5.1.6",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@types/yargs": "^17.0.24"
+    "@types/yargs": "^17.0.24",
+    "copyfiles": "^2.4.1"
   }
 }
